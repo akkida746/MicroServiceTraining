@@ -4,10 +4,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import com.example.training.entity.User;
 
 @SpringBootApplication
+@EnableAspectJAutoProxy
 public class TrainingApplication {
 
 	public static void main(String[] args) {
@@ -17,8 +19,7 @@ public class TrainingApplication {
 	@Bean
 	CommandLineRunner runner() {
 		return args -> {
-			User user = User.builder().name("Akash").build();
-			System.out.println(user);
+			System.out.println("Started...");
 		};
 	}
 }
